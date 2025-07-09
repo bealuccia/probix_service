@@ -480,6 +480,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
+<script>
+  function resizeIframeToContent() {
+    const height = document.documentElement.scrollHeight;
+    parent.postMessage({ type: "resize-service", height }, "*");
+  }
+  window.addEventListener("load", resizeIframeToContent);
+  window.addEventListener("resize", resizeIframeToContent);
+</script>
 
 </div>
 </body>
