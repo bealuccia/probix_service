@@ -499,7 +499,7 @@ body::before{content: none;}.custom-services-wrapper .container{max-width: 1200p
             <span class="close-button">&times;</span>
             <h2 id="modal-title"></h2>
             <p id="modal-description"></p>
-            <a href="javascript:void(0)" class="btn btn-consultation">Бесплатная консультация</a>
+            
         </div>
     </div>
 
@@ -631,24 +631,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const consultationButton = document.querySelector('.btn-consultation');
 
-    if (consultationButton) {
-        consultationButton.addEventListener('click', () => {
-            const existingForm = document.querySelector('[data-b24-form]');
-            if (!existingForm) {
-                const script = document.createElement('script');
-                script.setAttribute('data-b24-form', 'click/4/g0gt2a');
-                script.setAttribute('data-skip-moving', 'true');
-                script.src = 'https://cdn-ru.bitrix24.ru/b33375352/crm/form/loader_4.js?' + (Date.now() / 180000 | 0);
-                document.body.appendChild(script);
-            }
-        });
-    }
-});
-</script>
 
 
 <script>
