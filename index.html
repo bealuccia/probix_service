@@ -25,7 +25,7 @@
     color: var(--text-dark);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    min-height: 100vh;
+    
     display: flex;
     flex-direction: column;
     position: relative;}.custom-services-wrapper /* Убираем фоновый паттерн для белого фона */
@@ -34,7 +34,8 @@ body::before{content: none;}.custom-services-wrapper .container{max-width: 1200p
     padding: 40px 20px;}.custom-services-wrapper .section-title{text-align: center;
     font-size: 2.8em;
     font-weight: 700;
-    margin-bottom: 60px;
+    margin-top: 30px;
+  margin-bottom: 30px;
     color: var(--text-dark); /* Темный заголовок */
     position: relative;
     padding-bottom: 15px;}.custom-services-wrapper .section-title::after{content: '';
@@ -55,7 +56,7 @@ body::before{content: none;}.custom-services-wrapper .container{max-width: 1200p
     padding-bottom: 20px; /* Добавим отступ снизу */}.custom-services-wrapper .service-card{background: var(--background-card); /* Белый фон карточек */
     border-radius: 12px;
     box-shadow: 0 8px 20px var(--shadow-light); /* Мягкая тень */
-    padding: 40px 40px 30px 40px;
+    padding: 30px 30px 20px 30px;
     text-align: center;
     transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
@@ -87,7 +88,7 @@ body::before{content: none;}.custom-services-wrapper .container{max-width: 1200p
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: -40px auto 25px auto; /* Иконка сидит на верхней границе */
+    margin: 20px auto 25px auto; /* Иконка сидит на верхней границе */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
@@ -172,14 +173,15 @@ body::before{content: none;}.custom-services-wrapper .container{max-width: 1200p
         width: 100%; /* фиксируем на ширину экрана */
         gap: 15;
         transform: translateX(0) !important;}.custom-services-wrapper .carousel-arrow{display: none;}.custom-services-wrapper .section-title{font-size: 2.2em;
-        margin-bottom: 40px;}.custom-services-wrapper .services-grid-viewport{overflow-x: auto;
+        margin-top: 30px;
+  margin-bottom: 30px;}.custom-services-wrapper .services-grid-viewport{overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         padding-bottom: 20px;}.custom-services-wrapper .service-card{flex: 0 0 100%;
         max-width: 100%;
         margin: 0;
         scroll-snap-align: start;
-        padding: 30px 20px 20px 20px;
+        padding: 30px 30px 20px 30px;
         box-shadow: 0 6px 15px var(--shadow-light);
         transform: none;}.custom-services-wrapper .service-card:last-child{margin-right: 0;}.custom-services-wrapper .service-card:hover{transform: none;
         box-shadow: 0 6px 15px var(--shadow-light);}.custom-services-wrapper .service-card::before{display: none;}.custom-services-wrapper .service-card:hover, .custom-services-wrapper .service-card:hover .service-icon, .custom-services-wrapper .service-card:hover h3, .custom-services-wrapper .service-card:hover p, .custom-services-wrapper .service-card:hover .service-features li{transform: none;
@@ -187,10 +189,10 @@ body::before{content: none;}.custom-services-wrapper .container{max-width: 1200p
         color: var(--text-dark);
         text-shadow: none;}.custom-services-wrapper .service-card h3{font-size: 1.6em;}.custom-services-wrapper .service-card p{font-size: 1em;}.custom-services-wrapper .btn{padding: 12px 25px;
         font-size: 1em;}.custom-services-wrapper .btn-consultation{padding: 10px 20px;
-        font-size: 0.9em;}.custom-services-wrapper .service-icon{margin: -40px auto 25px auto;
+        font-size: 0.9em;}.custom-services-wrapper .service-icon{margin: 20px auto 25px auto;
         width: 100px;      /* увеличили размер круга */
         height: 100px;
-        font-size: 55px;   /* увеличили эмодзи */}}@media (max-width: 480px){.custom-services-wrapper .section-title{font-size: 1.8em;}.custom-services-wrapper .service-card{padding: 15px 10px 10px 10px;}.custom-services-wrapper .service-card h3{font-size: 1.5em;}.custom-services-wrapper .service-icon{margin: 30px auto 20px auto;
+        font-size: 55px;   /* увеличили эмодзи */}}@media (max-width: 480px){.custom-services-wrapper .section-title{font-size: 1.8em;}.custom-services-wrapper .service-card{padding: 30px 30px 20px 30px;}.custom-services-wrapper .service-card h3{font-size: 1.5em;}.custom-services-wrapper .service-icon{margin: 20px auto 25px auto;
         width: 70px;
         height: 70px;
         font-size: 40px;}}.custom-services-wrapper /* Swipe Hint Animation */
@@ -264,6 +266,89 @@ body::before{content: none;}.custom-services-wrapper .container{max-width: 1200p
     font-weight: bold;}.custom-services-wrapper .close-button:hover, .custom-services-wrapper .close-button:focus{color: black;
     text-decoration: none;
     cursor: pointer;}</style>
+<style>
+@media (max-width: 768px) {
+  .custom-services-wrapper .services-grid-viewport {
+    padding-bottom: 0 !important;
+  }
+
+  .custom-services-wrapper .service-card:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .custom-services-wrapper .swipe-hint {
+    display: none !important;
+  }
+}
+</style>
+<style>
+@media (max-width: 768px) {
+  .custom-services-wrapper .services {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .custom-services-wrapper .services-grid {
+    margin-bottom: 0 !important;
+  }
+
+  .custom-services-wrapper .service-card {
+    padding: 20px 15px 15px 15px !important;
+  }
+
+  .custom-services-wrapper .service-card:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .custom-services-wrapper .services-grid-viewport {
+    padding-bottom: 0 !important;
+  }
+
+  .custom-services-wrapper .swipe-hint {
+    display: none !important;
+  }
+}
+</style>
+<style>
+@media (max-width: 768px) {
+  .custom-services-wrapper .service-card {
+    padding: 15px 10px 10px 10px !important;
+  }
+
+  .custom-services-wrapper .service-features {
+    margin-bottom: 10px !important;
+  }
+
+  .custom-services-wrapper .btn {
+    margin-top: 10px !important;
+  }
+
+  .custom-services-wrapper .services {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+</style>
+
+<style>
+.custom-services-wrapper .service-card {
+  padding-bottom: 10px !important;
+}
+.custom-services-wrapper .service-features {
+  margin-bottom: 5px !important;
+}
+.custom-services-wrapper .btn {
+  margin-top: 5px !important;
+}
+.custom-services-wrapper .services {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+.custom-services-wrapper .services-grid-viewport {
+  padding-bottom: 0 !important;
+}
+</style>
+
 </head>
 <body>
 <div class="custom-services-wrapper">
