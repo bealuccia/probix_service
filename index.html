@@ -189,7 +189,7 @@ body::before{content: none;}.custom-services-wrapper .container{max-width: 1200p
         color: var(--text-dark);
         text-shadow: none;}.custom-services-wrapper .service-card h3{font-size: 1.6em;}.custom-services-wrapper .service-card p{font-size: 1em;}.custom-services-wrapper .btn{padding: 12px 25px;
         font-size: 1em;}.custom-services-wrapper .btn-consultation{padding: 10px 20px;
-        font-size: 0.9em;}.custom-services-wrapper .service-icon{margin: 20px auto 25px auto;
+        font-size: 0.95em;}.custom-services-wrapper .service-icon{margin: 20px auto 25px auto;
         width: 100px;      /* увеличили размер круга */
         height: 100px;
         font-size: 55px;   /* увеличили эмодзи */}}@media (max-width: 480px){.custom-services-wrapper .section-title{font-size: 1.8em;}.custom-services-wrapper .service-card{padding: 30px 30px 20px 30px;}.custom-services-wrapper .service-card h3{font-size: 1.5em;}.custom-services-wrapper .service-icon{margin: 20px auto 25px auto;
@@ -248,11 +248,11 @@ body::before{content: none;}.custom-services-wrapper .container{max-width: 1200p
     text-align: center;}.custom-services-wrapper .btn-consultation{display: inline-block;
     background: linear-gradient(to right, var(--primary-color), #6DD5ED);
     color: #fff;
-    padding: 14px 30px;
+    padding: 10px 20px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1em;
+    font-size: 0.95em;
     transition: all 0.3s ease;
     margin-top: 20px;
     border: none;
@@ -276,7 +276,7 @@ body::before{content: none;}.custom-services-wrapper .container{max-width: 1200p
     margin-bottom: 0 !important;
   }
 
-
+  
 }
 </style>
 <style>
@@ -302,6 +302,7 @@ body::before{content: none;}.custom-services-wrapper .container{max-width: 1200p
     padding-bottom: 0 !important;
   }
 
+  
 }
 </style>
 <style>
@@ -371,6 +372,33 @@ body::before{content: none;}.custom-services-wrapper .container{max-width: 1200p
   width: 85%;
   max-width: 400px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+</style>
+
+
+<style>
+  body.modal-open {
+    overflow: hidden !important;
+    height: 100vh;
+  }
+</style>
+
+
+<style>
+@media (max-width: 768px) {
+  .custom-services-wrapper .swipe-hint {
+    display: block !important;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 3em;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    animation: swipe-animation 1.5s ease-in-out infinite;
+    z-index: 1000;
+    pointer-events: none;
+  }
 }
 </style>
 
@@ -600,6 +628,77 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.addEventListener("load", resizeIframeToContent);
   window.addEventListener("resize", resizeIframeToContent);
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const consultationButton = document.querySelector('.btn-consultation');
+
+    if (consultationButton) {
+        consultationButton.addEventListener('click', () => {
+            const existingForm = document.querySelector('[data-b24-form]');
+            if (!existingForm) {
+                const script = document.createElement('script');
+                script.setAttribute('data-b24-form', 'click/4/g0gt2a');
+                script.setAttribute('data-skip-moving', 'true');
+                script.src = 'https://cdn-ru.bitrix24.ru/b33375352/crm/form/loader_4.js?' + (Date.now() / 180000 | 0);
+                document.body.appendChild(script);
+            }
+        });
+    }
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('service-modal');
+    const closeButton = document.querySelector('.close-button');
+    const modalButtons = document.querySelectorAll('.btn');
+
+    modalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            document.body.classList.add('modal-open');
+        });
+    });
+
+    closeButton.addEventListener('click', () => {
+        document.body.classList.remove('modal-open');
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            document.body.classList.remove('modal-open');
+        }
+    });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const lists = document.querySelectorAll('.service-features');
+
+  lists.forEach(el => {
+    let startY = 0;
+
+    el.addEventListener('touchstart', e => {
+      startY = e.touches[0].clientY;
+    }, { passive: true });
+
+    el.addEventListener('touchmove', e => {
+      const currentY = e.touches[0].clientY;
+      const diff = currentY - startY;
+
+      const atTop = el.scrollTop === 0;
+      const atBottom = el.scrollTop + el.offsetHeight >= el.scrollHeight - 1;
+
+      if ((atTop && diff > 0) || (atBottom && diff < 0)) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+  });
+});
 </script>
 
 </body>
