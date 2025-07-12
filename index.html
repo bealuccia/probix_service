@@ -4,7 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Наши Услуги</title>
-    <style>.custom-services-wrapper /* Общие стили */
+    <style>
+   /* Text Unification Styles */
+:root{--header-heading-font: 'Inter', sans-serif;
+    --header-body-font: 'Montserrat', sans-serif;
+    --header-base-text-size: 16px;
+    --header-base-weight: 400;
+    --header-heading-weight: 700;}
+
+.custom-services-wrapper h2, .custom-services-wrapper h3 {
+    font-family: var(--header-heading-font);
+    font-weight: var(--header-heading-weight);
+}
+
+.custom-services-wrapper p, .custom-services-wrapper li, .custom-services-wrapper a, .custom-services-wrapper span {
+    font-family: var(--header-body-font);
+    font-weight: var(--header-base-weight);
+}
+
+.custom-services-wrapper .section-title {
+    font-size: 2.8em;
+}
+
+.custom-services-wrapper .service-card h3 {
+    font-size: 2em;
+}
+
+.custom-services-wrapper .service-card p {
+    font-size: 1.1em;
+}
+
+.custom-services-wrapper .btn {
+    font-size: 1.1em;
+}
+
+.custom-services-wrapper .consultation-block h2 {
+    font-size: 2em;
+}
+
+.custom-services-wrapper .consultation-block p {
+    font-size: 1.2em;
+}
+
+.custom-services-wrapper .cta-button {
+    font-size: 1.2em;
+}
+.custom-services-wrapper /* Общие стили */
 *, .custom-services-wrapper *::before, .custom-services-wrapper *::after{box-sizing: border-box;}
 :root{--primary-color: #007bff; /* Основной синий */
     --secondary-color: #6c757d; /* Серый */
