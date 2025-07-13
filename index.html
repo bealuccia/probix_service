@@ -24,6 +24,7 @@
 .custom-services-wrapper li {
     font-family: var(--header-body-font);
     font-weight: 300; /* Уменьшаем жирность текста */
+    color: #4a4a4a; /* Делаем текст менее черным */
 }
 
 .custom-services-wrapper .section-title {
@@ -115,22 +116,7 @@ body::before{content: none;}.custom-services-wrapper .container{max-width: 1200p
     border: 2px solid var(--border-color); /* Более выраженная граница */
     z-index: 1;
     flex: 0 0 calc(33.333% - 13.333px); /* 3 карточки в ряду с учетом gap */
-    max-width: calc(33.333% - 13.333px);}.custom-services-wrapper /* Изюминка: Органический, .custom-services-wrapper текучий градиент внутри карточки */
-.service-card::before{content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--liquid-gradient);
-    background-size: 200% 200%; /* Большой размер для анимации потока */
-    transform: scale(0); /* Скрываем по умолчанию */
-    opacity: 0;
-    border-radius: 12px;
-    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-    animation: liquid-flow 8s linear infinite; /* Анимация потока */
-    z-index: -1; /* Под контентом карточки */}@keyframes liquid-flow{0%{background-position: 0% 0%;}100%{background-position: 100% 100%;}}.custom-services-wrapper .service-card:hover{box-shadow: 0 15px 30px var(--shadow-medium);}.custom-services-wrapper .service-card:hover::before{transform: scale(1); /* Показываем и масштабируем */
-    opacity: 1;}.custom-services-wrapper .service-icon{width: 100px;
+    max-width: calc(33.333% - 13.333px);}.custom-services-wrapper .service-card:hover{box-shadow: 0 15px 30px var(--shadow-medium);}.custom-services-wrapper .service-icon{width: 100px;
     height: 100px;
     background: var(--primary-color); /* Однотонный синий круг */
     border-radius: 50%; /* Идеальный круг */
@@ -159,21 +145,7 @@ body::before{content: none;}.custom-services-wrapper .container{max-width: 1200p
     margin-bottom: 25px; /* Возвращаем исходный отступ */
     flex-grow: 1;
     transition: text-shadow 0.3s ease, color 0.3s ease; /* Добавляем переход для цвета */
-    text-align: center;}.custom-services-wrapper .service-card:hover h3{color: #FFFFFF; /* Белый цвет текста */
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 0, 0, 0.7); /* Очень выраженная тень */}.custom-services-wrapper .service-card:hover p{color: #FFFFFF; /* Белый цвет текста */
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 0, 0, 0.4); /* Очень выраженная тень */}.custom-services-wrapper /* Стили для списка услуг внутри карточки */
-.service-features{list-style: none;
-    padding: 15px; /* Добавляем внутренний отступ */
-    margin: 0 0 25px 0;
-    max-height: 150px; /* Ограничиваем высоту списка */
-    overflow-y: auto; /* Добавляем скролл, если контента много */
-    padding-right: 10px; /* Отступ для скроллбара */
-    border: 1px solid var(--border-color); /* Добавляем границу */
-    border-radius: 8px; /* Скругляем углы */
-    text-align: left;
-    overscroll-behavior: contain; /* Предотвращаем цепочку прокрутки */
-    touch-action: pan-y; /* Улучшаем обработку сенсорных жестов */}.custom-services-wrapper .service-card:hover .service-features li{color: #FFFFFF; /* Белый цвет текста */
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 0, 0, 0.4); /* Очень выраженная тень */}.custom-services-wrapper .service-card:hover .service-features li::before{color: var(--accent-color); /* Зеленый цвет при наведении */}.custom-services-wrapper .service-features li::before{content: '\2713'; /* Unicode галочка */
+    text-align: center;}.custom-services-wrapper .service-features li::before{content: '\2713'; /* Unicode галочка */
     color: var(--primary-color); /* Синий цвет */
     display: inline-block;
     margin-right: 8px;
@@ -256,7 +228,19 @@ body::before{content: none;}.custom-services-wrapper .container{max-width: 1200p
     color: var(--primary-color);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     animation: swipe-animation 1.5s ease-in-out infinite;
-    z-index: 10;}@media (max-width: 768px){.custom-services-wrapper .swipe-hint{ /* Убрано display: block; */ }}.custom-services-wrapper .hidden-swipe-hint { display: none !important; }@keyframes swipe-animation{0%{transform: translateY(-50%) translateX(0); opacity: 0.5;} 50%{transform: translateY(-50%) translateX(-25px); opacity: 1; color: var(--accent-color);} 100%{transform: translateY(-50%) translateX(0); opacity: 0.5;}}.custom-services-wrapper /* Стили для блока консультации */
+    z-index: 10;}@media (max-width: 768px){.custom-services-wrapper .swipe-hint{ /* Убрано display: block; */ }}.custom-services-wrapper .hidden-swipe-hint { display: none !important; }@keyframes swipe-animation{0%{transform: translateY(-50%) translateX(0); opacity: 0.5;} 50%{transform: translateY(-50%) translateX(-25px); opacity: 1; color: var(--accent-color);} 100%{transform: translateY(-50%) translateX(0); opacity: 0.5;}}
+.service-features{list-style: none;
+    padding: 15px; /* Добавляем внутренний отступ */
+    margin: 0 0 25px 0;
+    max-height: 150px; /* Ограничиваем высоту списка */
+    overflow-y: auto; /* Добавляем скролл, если контента много */
+    padding-right: 10px; /* Отступ для скроллбара */
+    border: 1px solid var(--border-color); /* Добавляем границу */
+    border-radius: 8px; /* Скругляем углы */
+    text-align: left;
+    overscroll-behavior: contain; /* Предотвращаем цепочку прокрутки */
+    touch-action: pan-y; /* Улучшаем обработку сенсорных жестов */}
+.custom-services-wrapper /* Стили для блока консультации */
 .consultation-block{padding: 50px 0;
     text-align: center;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
