@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Наши Услуги</title>
     <style>
    /* Text Unification Styles */
-:root{--header-heading-font: 'Inter', sans-serif;
-    --header-body-font: 'Montserrat', sans-serif;
+:root{--header-heading-font: 'Open Sans', sans-serif;
+    --header-body-font: 'Open Sans', sans-serif;
     --header-base-text-size: 16px;
     --header-base-weight: 400;
     --header-heading-weight: 700;}
@@ -434,6 +435,42 @@ body::before{content: none;}.custom-services-wrapper .container{max-width: 1200p
     z-index: 1000;
     pointer-events: none;
   }
+}
+</style>
+
+
+<style>
+.custom-services-wrapper h2,
+.custom-services-wrapper h3 {
+  font-family: var(--header-heading-font);
+  font-weight: var(--header-heading-weight);
+  color: var(--text-dark);
+}
+
+.custom-services-wrapper p,
+.custom-services-wrapper li,
+.custom-services-wrapper a {
+  font-family: var(--header-body-font);
+  font-weight: var(--header-base-weight);
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.custom-services-wrapper .section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.custom-services-wrapper .service-card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.custom-services-wrapper .service-card p {
+  font-size: 16px;
+  color: var(--text-muted);
 }
 </style>
 
